@@ -26,15 +26,25 @@
     }
 
     /* HEADER */
-    .header {
+    /* .header {
         background: linear-gradient(135deg, #0f1720, #1f2937);
         height: 220px;
         border-bottom-left-radius: 60px;
         border-bottom-right-radius: 60px;
-    }
+    } */
 
+    .container {
+    margin-top: -40px;
+}
+
+    .header {
+    background: linear-gradient(135deg, #0f1720, #1f2937);
+    height: 160px; /* reduce from 220px */
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
     /* AVATAR */
-    .avatar {
+    /* .avatar {
         width: 120px;
         height: 120px;
         background: #111827;
@@ -47,7 +57,54 @@
         font-weight: 600;
         color: #fbbf24;
         box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-    }
+    } */
+
+
+/* .avatar {
+    width: 120px;
+    height: 120px;
+    margin: -60px auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+} */
+
+/* .avatar {
+    width: 120px;
+    height: 120px;
+    margin: -60px auto 15px;
+    border-radius: 50%;
+    border: 3px solid #fbbf24;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    background: transparent; 
+    position: relative;
+    z-index: 2;
+} */
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 3px solid #fbbf24;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
     h2 {
         margin: 5px 0;
@@ -142,11 +199,14 @@
 <body>
 
 ```
-<div class="header"></div>
+<!-- <div class="header"></div> -->
+
 
 <div class="container">
 
-    <div class="avatar">M</div>
+<div class="avatar">
+    <img src="profile.jpeg" alt="Profile Image">
+</div>
 
     <h2>Mohamed Sharafudheen P S</h2>
     <div class="subtitle">CEO & Founder</div>
