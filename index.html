@@ -20,13 +20,9 @@
 
         .container {
             max-width: 380px;
-            margin: 40px auto;
+            margin: 30px auto;
             padding: 25px 15px 30px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
         }
 
         /* PROFILE IMAGE */
@@ -38,11 +34,6 @@
             overflow: hidden;
             border: 3px solid #fbbf24;
             box-shadow: 0 0 25px rgba(251,191,36,0.4);
-            transition: transform 0.3s ease;
-        }
-
-        .avatar:hover {
-            transform: scale(1.05);
         }
 
         .avatar img {
@@ -56,7 +47,13 @@
             margin: 10px 0 5px;
             font-size: 24px;
             font-weight: 600;
+            line-height: 1.3;
             letter-spacing: 0.5px;
+        }
+
+        .small-name {
+            font-size: 18px;
+            font-weight: 500;
         }
 
         .subtitle {
@@ -71,24 +68,18 @@
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 20px;
-            letter-spacing: 0.5px;
         }
 
-        /* CONTACT ITEMS */
+        /* CONTACT CARD */
         .contact {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 14px;
             margin: 12px 10px;
-            padding: 12px;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.03);
-            transition: 0.3s;
-        }
-
-        .contact:hover {
-            background: rgba(255,255,255,0.07);
-            transform: translateY(-2px);
+            padding: 14px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
         }
 
         .icon {
@@ -101,36 +92,37 @@
             justify-content: center;
             color: white;
             font-size: 16px;
+            flex-shrink: 0;
         }
 
         .text {
             text-align: left;
+            flex: 1;
+            min-width: 0;
         }
 
         .text a {
             color: #e5e7eb;
             text-decoration: none;
             font-size: 15px;
+            word-break: normal;
+            overflow-wrap: normal;
+            line-height: 1.4;
         }
 
         /* BUTTON */
         .btn {
             margin: 25px auto 10px;
             display: block;
-            width: 85%;
-            padding: 14px;
+            width: 90%;
+            padding: 15px;
             background: linear-gradient(45deg, #fbbf24, #f59e0b);
             color: #000;
             text-decoration: none;
-            border-radius: 12px;
-            font-size: 15px;
+            border-radius: 14px;
+            font-size: 16px;
             font-weight: 600;
             box-shadow: 0 5px 20px rgba(251,191,36,0.4);
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
         }
 
         /* WHATSAPP FLOAT */
@@ -151,7 +143,7 @@
             text-decoration: none;
         }
 
-        /* MOBILE OPTIMIZATION */
+        /* MOBILE */
         @media (max-width: 400px) {
             .container {
                 margin: 20px 10px;
@@ -169,10 +161,15 @@
         <img src="profile.jpeg" alt="Profile Image">
     </div>
 
-    <h2>Mohamed Sharafudheen P S</h2>
+    <h2>
+        Mohamed Sharafudheen<br>
+        <span class="small-name">P S</span>
+    </h2>
+
     <div class="subtitle">CEO & Founder</div>
     <div class="company">WISDOM GROUP OF EDUCATION</div>
 
+    <!-- PHONE 1 -->
     <div class="contact">
         <div class="icon"><i class="fas fa-phone"></i></div>
         <div class="text">
@@ -180,6 +177,7 @@
         </div>
     </div>
 
+    <!-- PHONE 2 -->
     <div class="contact">
         <div class="icon"><i class="fas fa-phone"></i></div>
         <div class="text">
@@ -187,15 +185,17 @@
         </div>
     </div>
 
+    <!-- EMAIL -->
     <div class="contact">
         <div class="icon"><i class="fas fa-envelope"></i></div>
         <div class="text">
             <a href="mailto:mohamedsharafudheenps@gmail.com">
-                mohamedsharafudheenps@gmail.com
+                mohamedsharafudheenps<br>@gmail.com
             </a>
         </div>
     </div>
 
+    <!-- ADDRESS -->
     <div class="contact">
         <div class="icon"><i class="fas fa-location-dot"></i></div>
         <div class="text">
@@ -206,10 +206,12 @@
         </div>
     </div>
 
+    <!-- BUTTON -->
     <a href="sharafudheen.vcf" class="btn">Add to Contacts</a>
 
 </div>
 
+<!-- WHATSAPP -->
 <a href="https://wa.me/919633212968" class="whatsapp" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
