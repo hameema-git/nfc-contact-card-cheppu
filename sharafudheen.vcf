@@ -2,18 +2,20 @@ BEGIN:VCARD
 VERSION:3.0
 N:Sharafudheen;Mohamed;;;
 FN:Mohamed Sharafudheen P S
+
 ORG:Wisdom Group Of Education
 TITLE:CEO & Founder
 
 TEL;TYPE=CELL:+919633212968
-TEL;TYPE=WORK:+917012119132
+TEL;TYPE=CELL:+917012119132
 
-EMAIL;TYPE=INTERNET:sharafudheen89@gmail.com
+EMAIL:sharafudheen89@gmail.com
 
-URL;TYPE=WORK:https://www.wisdomacademyedu.com/
+URL:https://www.wisdomacademyedu.com
+URL;TYPE=WORK:https://www.wisdomacademyedu.com
 
-ADR;TYPE=WORK:;;13/1139 Puthenveetil House;Chullikkal;Kochi;Kerala;682005;India
+NOTE:Website: https://www.wisdomacademyedu.com
 
-NOTE:Website - https://www.wisdomacademyedu.com/
+ADR:;;13/1139 Puthenveetil House, Chullikkal, Kochi, Kerala 682005;;;;
 
 END:VCARD
