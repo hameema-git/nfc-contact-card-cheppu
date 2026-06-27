@@ -12,10 +12,19 @@ TEL:+917012119132
 
 EMAIL:sharafudheen89@gmail.com
 
-URL;TYPE=WORK:https://www.wisdomacademyedu.com/
-URL;TYPE=HOME:https://www.facebook.com/share/18hSP3Doji/
-URL;TYPE=OTHER:https://www.instagram.com/hameemasharaf
-URL;TYPE=OTHER:https://www.linkedin.com/in/hameema-fahmi-m-y-0aa074282
+
+
+item1.URL:https://www.wisdomacademyedu.com/
+item1.X-ABLabel:Website
+
+item2.URL:https://www.instagram.com/hameemasharaf
+item2.X-ABLabel:Instagram
+
+item3.URL:https://www.facebook.com/share/18hSP3Doji/
+item3.X-ABLabel:Facebook
+
+item4.URL:https://www.linkedin.com/in/hameema-fahmi-m-y-0aa074282
+item4.X-ABLabel:LinkedIn
 
 ADR:;;13/1139 Puthenveetil House\, Chullikkal\, Kochi\, Kerala\,682005;Kochi;Kerala;682005;India
 
