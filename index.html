@@ -3,414 +3,494 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mohamed Sharafudheen P S</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #1c1c1e;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  color: #fff;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#000;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    color:#fff;
+.page {
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+  background: #1c1c1e;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 48px;
 }
 
-.container{
-    width:100%;
-    max-width:420px;
+/* ── Top nav bar ── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px 10px;
+}
+.topbar-done {
+  font-size: 17px;
+  font-weight: 600;
+  color: #0a84ff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+.topbar-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+.topbar-space { width: 48px; }
+
+/* ── Avatar + name hero ── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 24px 20px;
+  background: #1c1c1e;
 }
 
-.profile-card{
-    position:relative;
-    overflow:hidden;
-    border-radius:30px;
-    padding:30px 20px;
-    min-height:90vh;
-
-    background:
-    linear-gradient(
-        135deg,
-        #050505,
-        #111111,
-        #1a1a1a
-    );
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.6);
+.avatar-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #e8a0b8, #c97fa0);
+  margin-bottom: 12px;
+}
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid #1c1c1e;
 }
 
-/* Glass Shapes */
-
-.profile-card::before{
-    content:"";
-    position:absolute;
-    top:-100px;
-    right:-120px;
-    width:280px;
-    height:280px;
-
-    background:rgba(255,255,255,.05);
-
-    transform:rotate(45deg);
-    border-radius:40px;
+.hero-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3px;
+}
+.hero-title {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.hero-company {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  margin-top: 4px;
 }
 
-.profile-card::after{
-    content:"";
-    position:absolute;
-    bottom:-120px;
-    left:-120px;
-    width:250px;
-    height:250px;
-
-    background:rgba(255,255,255,.04);
-
-    transform:rotate(45deg);
-    border-radius:40px;
+/* ── Action buttons row (Message / Call / Video / Mail) ── */
+.quick-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 20px 0;
+}
+.quick-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: #2c2c2e;
+  border-radius: 13px;
+  padding: 10px 0;
+  width: 72px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #0a84ff;
+  transition: opacity 0.15s;
+}
+.quick-btn:active { opacity: 0.6; }
+.quick-btn i { font-size: 19px; }
+.quick-btn span {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  font-family: inherit;
 }
 
-/* Logo */
-
-.logo{
-    width:100px;
-    display:block;
-    margin:0 auto 20px;
-    position:relative;
-    z-index:2;
+/* ── Info groups ── */
+.groups {
+  padding: 22px 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* Profile */
-
-.avatar{
-    width:130px;
-    height:130px;
-    margin:auto;
-
-    border-radius:50%;
-    overflow:hidden;
-
-    border:4px solid rgba(255,193,7,.5);
-
-    position:relative;
-    z-index:2;
+.group {
+  background: #2c2c2e;
+  border-radius: 13px;
+  overflow: hidden;
 }
 
-.avatar img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.field {
+  display: flex;
+  flex-direction: column;
+  padding: 11px 16px;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.12s;
+}
+.field:last-child { border-bottom: none; }
+.field:active { background: rgba(255,255,255,0.06); }
+
+.field-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.3px;
+  margin-bottom: 3px;
+  text-transform: capitalize;
+}
+.field-value {
+  font-size: 15px;
+  font-weight: 400;
+  color: #0a84ff;
+  line-height: 1.35;
+}
+.field-value.plain { color: #fff; }
+.field-value.muted { color: rgba(255,255,255,0.7); }
+
+/* field with icon on right */
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 16px;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.12s;
+}
+.field-row:last-child { border-bottom: none; }
+.field-row:active { background: rgba(255,255,255,0.06); }
+.field-row-left { display: flex; flex-direction: column; gap: 2px; }
+.field-row-icon { color: rgba(255,255,255,0.25); font-size: 14px; }
+
+/* Social grid group */
+.social-group {
+  background: #2c2c2e;
+  border-radius: 13px;
+  overflow: hidden;
+}
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.social-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 4px 12px;
+  text-decoration: none;
+  color: inherit;
+  border-right: 0.5px solid rgba(255,255,255,0.07);
+  border-bottom: 0.5px solid rgba(255,255,255,0.07);
+  transition: background 0.12s;
+}
+.social-btn:nth-child(4n) { border-right: none; }
+.social-btn:nth-last-child(-n+4) { border-bottom: none; }
+.social-btn:active { background: rgba(255,255,255,0.05); }
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.social-lbl {
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  line-height: 1.2;
 }
 
-h2{
-    text-align:center;
-    margin-top:18px;
-    font-size:28px;
-    font-weight:700;
-    position:relative;
-    z-index:2;
+/* brand tints */
+.ic-wa    { background: rgba(37,211,102,0.15);  color: #25d366; }
+.ic-ig    { background: rgba(225,48,108,0.15);  color: #e1306c; }
+.ic-fb    { background: rgba(24,119,242,0.15);  color: #1877f2; }
+.ic-tw    { background: rgba(255,255,255,0.08); color: #fff; }
+.ic-li    { background: rgba(0,119,181,0.15);   color: #0077b5; }
+.ic-yt    { background: rgba(255,0,0,0.13);     color: #ff3b30; }
+.ic-tg    { background: rgba(0,136,204,0.15);   color: #0088cc; }
+.ic-tk    { background: rgba(255,255,255,0.07); color: #fff; }
+.ic-sc    { background: rgba(255,252,0,0.12);   color: #fffc00; }
+.ic-th    { background: rgba(255,255,255,0.07); color: #fff; }
+.ic-pt    { background: rgba(230,0,35,0.13);    color: #e60023; }
+.ic-sms   { background: rgba(90,200,250,0.13);  color: #5ac8fa; }
+
+/* ── Bottom CTA buttons ── */
+.cta-group {
+  margin: 10px 16px 0;
+  background: #2c2c2e;
+  border-radius: 13px;
+  overflow: hidden;
 }
-
-.subtitle{
-    text-align:center;
-    color:#ffc107;
-    font-size:18px;
-    font-weight:600;
-    margin-top:10px;
-    position:relative;
-    z-index:2;
+.cta-btn {
+  display: block;
+  width: 100%;
+  padding: 15px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0a84ff;
+  background: none;
+  border: none;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  transition: background 0.12s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+.cta-btn:last-child { border-bottom: none; }
+.cta-btn:active { background: rgba(255,255,255,0.06); }
+.cta-btn i { font-size: 16px; width: 20px; text-align: center; }
 
-.divider{
-    width:140px;
-    height:3px;
-    background:#ffc107;
-    margin:15px auto;
-    border-radius:5px;
+.footer {
+  margin-top: 28px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: 0.5px;
+  text-align: center;
 }
-
-.company{
-    text-align:center;
-    color:#ffffff;
-    opacity:.8;
-    font-size:14px;
-    letter-spacing:1px;
-    margin-bottom:25px;
-    position:relative;
-    z-index:2;
-}
-
-/* Contact */
-
-.contact{
-    margin-bottom:15px;
-    position:relative;
-    z-index:2;
-}
-
-.contact label{
-    display:block;
-    margin-bottom:8px;
-    color:#ffc107;
-    font-size:13px;
-    font-weight:500;
-}
-
-.field{
-    background:rgba(255,255,255,.08);
-    border-radius:15px;
-    padding:15px;
-
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,.05);
-}
-
-.field i{
-    color:#ffc107;
-    width:20px;
-    font-size:18px;
-}
-
-.field a{
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-    word-break:break-word;
-}
-
-.field span{
-    font-size:14px;
-    color:white;
-}
-
-/* Button */
-
-.btn{
-    display:block;
-    text-align:center;
-
-    margin-top:25px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #ffc107,
-        #ff9800
-    );
-
-    color:#111;
-    padding:16px;
-
-    border-radius:15px;
-
-    text-decoration:none;
-    font-weight:700;
-
-    box-shadow:
-    0 10px 25px rgba(255,193,7,.25);
-
-    position:relative;
-    z-index:2;
-}
-
-/* WhatsApp */
-
-.whatsapp{
-    position:fixed;
-
-    right:20px;
-    bottom:20px;
-
-    width:65px;
-    height:65px;
-
-    border-radius:50%;
-
-    background:#25D366;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:white;
-    text-decoration:none;
-
-    font-size:30px;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.4);
-
-    z-index:999;
-}
-
-@media(max-width:420px){
-
-    .profile-card{
-        min-height:auto;
-    }
-
-    h2{
-        font-size:24px;
-    }
-
-}
+.footer span { color: rgba(255,160,184,0.35); }
 
 </style>
 </head>
-
 <body>
+<div class="page">
 
-<div class="container">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="topbar-space"></div>
+    <div class="topbar-title">NFC Card</div>
+    <button class="topbar-done">Done</button>
+  </div>
 
-<div class="profile-card">
-
-    <!-- LOGO -->
-    <!-- <img src="logo.png" class="logo" alt="Wisdom Logo"> -->
-
-    <!-- PROFILE -->
-    <div class="avatar">
-        <img src="profile.jpeg" alt="Profile">
+  <!-- Hero -->
+  <div class="hero">
+    <div class="avatar-wrap">
+      <img src="profile.jpeg" alt="Mohamed Sharafudheen">
     </div>
+    <div class="hero-name">Mohamed Sharafudheen P S</div>
+    <div class="hero-title">CEO &amp; Founder</div>
+    <div class="hero-company">Wisdom Group Of Education</div>
+  </div>
 
-    <h2>Mohamed Sharafudheen P S</h2>
-
-    <div class="subtitle">
-        CEO & Founder
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="company">
-        WISDOM GROUP OF EDUCATION
-    </div>
-
-    <!-- MOBILE -->
-
-    <div class="contact">
-
-        <label>Mobile Number</label>
-
-        <div class="field">
-            <i class="fas fa-phone"></i>
-
-            <a href="tel:+919633212968">
-                +91 9633212968
-            </a>
-        </div>
-
-    </div>
-
-    <!-- ALTERNATE -->
-
-    <div class="contact">
-
-        <label>Alternative Number</label>
-
-        <div class="field">
-            <i class="fas fa-phone"></i>
-
-            <a href="tel:+917012119132">
-                +91 7012119132
-            </a>
-        </div>
-
-    </div>
-
-    <!-- EMAIL -->
-
-    <div class="contact">
-
-        <label>Email Address</label>
-
-        <div class="field">
-            <i class="fas fa-envelope"></i>
-
-            <a href="mailto:sharafudheen89@gmail.com">
-                sharafudheen89@gmail.com
-            </a>
-        </div>
-
-    </div>
-
-    <!-- WEBSITE -->
-
-    <div class="contact">
-
-        <label>Website</label>
-
-        <div class="field">
-            <i class="fas fa-globe"></i>
-
-            <a href="https://www.wisdomacademyedu.com/"
-               target="_blank">
-
-               www.wisdomacademyedu.com
-
-            </a>
-        </div>
-
-    </div>
-
-    <!-- ADDRESS -->
-
-    <div class="contact">
-
-        <label>Office Address</label>
-
-        <div class="field">
-            <i class="fas fa-location-dot"></i>
-
-            <span>
-                13/1139 Puthenveetil House,
-                Chullikkal,
-                Kochi - 682005
-            </span>
-        </div>
-
-    </div>
-
-    <!-- SAVE CONTACT -->
-
-    <a href="sharafudheen.vcf" class="btn">
-
-        <i class="fas fa-address-card"></i>
-        &nbsp; Add To Contacts
-
+  <!-- Quick action pills -->
+  <div class="quick-actions">
+    <a href="sms:+919633212968" class="quick-btn">
+      <i class="fas fa-comment"></i>
+      <span>message</span>
     </a>
+    <a href="tel:+919633212968" class="quick-btn">
+      <i class="fas fa-phone"></i>
+      <span>call</span>
+    </a>
+    <a href="https://wa.me/919633212968" target="_blank" class="quick-btn">
+      <i class="fab fa-whatsapp"></i>
+      <span>whatsapp</span>
+    </a>
+    <a href="mailto:mohamedsharafudheenps@gmail.com" class="quick-btn">
+      <i class="fas fa-envelope"></i>
+      <span>mail</span>
+    </a>
+  </div>
+
+  <!-- Info fields -->
+  <div class="groups">
+
+    <!-- Phone numbers -->
+    <div class="group">
+      <a href="tel:+919633212968" class="field-row">
+        <div class="field-row-left">
+          <span class="field-label">mobile</span>
+          <span class="field-value">+91 96332 12968</span>
+        </div>
+        <i class="fas fa-chevron-right field-row-icon"></i>
+      </a>
+      <a href="tel:+917012119132" class="field-row">
+        <div class="field-row-left">
+          <span class="field-label">mobile</span>
+          <span class="field-value">+91 70121 19132</span>
+        </div>
+        <i class="fas fa-chevron-right field-row-icon"></i>
+      </a>
+    </div>
+
+    <!-- Email -->
+    <div class="group">
+      <a href="mailto:mohamedsharafudheenps@gmail.com" class="field-row">
+        <div class="field-row-left">
+          <span class="field-label">email</span>
+          <span class="field-value">mohamedsharafudheenps@gmail.com</span>
+        </div>
+        <i class="fas fa-chevron-right field-row-icon"></i>
+      </a>
+    </div>
+
+    <!-- Website -->
+    <div class="group">
+      <a href="https://www.wisdomacademyedu.com" target="_blank" class="field-row">
+        <div class="field-row-left">
+          <span class="field-label">website</span>
+          <span class="field-value">www.wisdomacademyedu.com</span>
+        </div>
+        <i class="fas fa-chevron-right field-row-icon"></i>
+      </a>
+    </div>
+
+    <!-- Services -->
+    <div class="group">
+      <div class="field">
+        <span class="field-label">services</span>
+        <span class="field-value muted">Education Management, Academic Coaching, Training &amp; Development</span>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="group">
+      <a href="https://maps.google.com/?q=Chullikkal+Kochi" target="_blank" class="field-row">
+        <div class="field-row-left">
+          <span class="field-label">personal address</span>
+          <span class="field-value muted">Chullikkal, Kochi</span>
+        </div>
+        <i class="fas fa-chevron-right field-row-icon"></i>
+      </a>
+      <a href="https://maps.google.com/?q=Marine+Drive+Kochi" target="_blank" class="field-row">
+        <div class="field-row-left">
+          <span class="field-label">official address</span>
+          <span class="field-value muted">13/1138A Puthenveetil House,<br>Chullikkal, Kochi – 682005</span>
+        </div>
+        <i class="fas fa-chevron-right field-row-icon"></i>
+      </a>
+    </div>
+
+    <!-- Note -->
+    <div class="group">
+      <div class="field">
+        <span class="field-label">note</span>
+        <span class="field-value muted">CEO &amp; Founder at Wisdom Group Of Education</span>
+      </div>
+    </div>
+
+    <!-- Social media grid -->
+    <div class="social-group">
+      <div class="social-grid">
+
+        <a href="https://wa.me/919633212968" target="_blank" class="social-btn">
+          <div class="social-icon ic-wa"><i class="fab fa-whatsapp"></i></div>
+          <span class="social-lbl">WhatsApp</span>
+        </a>
+
+        <a href="https://instagram.com/" target="_blank" class="social-btn">
+          <div class="social-icon ic-ig"><i class="fab fa-instagram"></i></div>
+          <span class="social-lbl">Instagram</span>
+        </a>
+
+        <a href="https://facebook.com/" target="_blank" class="social-btn">
+          <div class="social-icon ic-fb"><i class="fab fa-facebook-f"></i></div>
+          <span class="social-lbl">Facebook</span>
+        </a>
+
+        <a href="https://twitter.com/" target="_blank" class="social-btn">
+          <div class="social-icon ic-tw"><i class="fab fa-x-twitter"></i></div>
+          <span class="social-lbl">X / Twitter</span>
+        </a>
+
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">
+          <div class="social-icon ic-li"><i class="fab fa-linkedin-in"></i></div>
+          <span class="social-lbl">LinkedIn</span>
+        </a>
+
+        <a href="https://youtube.com/" target="_blank" class="social-btn">
+          <div class="social-icon ic-yt"><i class="fab fa-youtube"></i></div>
+          <span class="social-lbl">YouTube</span>
+        </a>
+
+        <a href="https://t.me/" target="_blank" class="social-btn">
+          <div class="social-icon ic-tg"><i class="fab fa-telegram"></i></div>
+          <span class="social-lbl">Telegram</span>
+        </a>
+
+        <a href="https://tiktok.com/" target="_blank" class="social-btn">
+          <div class="social-icon ic-tk"><i class="fab fa-tiktok"></i></div>
+          <span class="social-lbl">TikTok</span>
+        </a>
+
+        <a href="https://snapchat.com/" target="_blank" class="social-btn">
+          <div class="social-icon ic-sc"><i class="fab fa-snapchat"></i></div>
+          <span class="social-lbl">Snapchat</span>
+        </a>
+
+        <a href="https://threads.net/" target="_blank" class="social-btn">
+          <div class="social-icon ic-th"><i class="fab fa-threads"></i></div>
+          <span class="social-lbl">Threads</span>
+        </a>
+
+        <a href="https://pinterest.com/" target="_blank" class="social-btn">
+          <div class="social-icon ic-pt"><i class="fab fa-pinterest-p"></i></div>
+          <span class="social-lbl">Pinterest</span>
+        </a>
+
+        <a href="sms:+919633212968" class="social-btn">
+          <div class="social-icon ic-sms"><i class="fas fa-comment-sms"></i></div>
+          <span class="social-lbl">SMS</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="cta-group">
+      <a href="sharafudheen.vcf" class="cta-btn">
+        <i class="fas fa-user-plus"></i>
+        Create New Contact
+      </a>
+      <a href="sharafudheen.vcf" class="cta-btn">
+        <i class="fas fa-user-check"></i>
+        Add to Existing Contact
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer" style="padding:0 16px;">Powered by <span>NFC Digital Card</span> &nbsp;·&nbsp; Code Leaf</div>
 
 </div>
-
-</div>
-
-<!-- WHATSAPP -->
-
-<a
-href="https://wa.me/919633212968"
-class="whatsapp"
-target="_blank">
-
-<i class="fab fa-whatsapp"></i>
-
-</a>
-
 </body>
 </html>
